@@ -1,16 +1,14 @@
 public class EX02 {
     public static void main(String[] args) {
-        StringBuilder originalString = new StringBuilder("Hello, Java World!");
+        StringBuilder sb = new StringBuilder("Hello, Java World!");
+        System.out.println("Chuoi ban dau: " + sb);
 
-        System.out.println("Chuỗi ban đầu: " + originalString);
+        sb.delete(5,9);
+        System.out.println("Chuoi sau khi xoa: " + sb);
 
-        originalString.delete(5, 10);
-        System.out.println("Chuỗi sau khi xóa: " + originalString);
-
-        int start = originalString.indexOf("World");
-        if (start != -1) {
-            originalString.replace(start, start + 5, "Universe");
-        }
-        System.out.println("Chuỗi sau khi thay thế: " + originalString);
+        int startIndex = sb.indexOf("World");
+        int endIndex = startIndex + 5;
+        sb.replace(startIndex, endIndex, "Universe");
+        System.out.println("Chuoi sau khi thay the: " + sb);
     }
 }
